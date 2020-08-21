@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0047BD10733F301CE52CDDB7 /* Pods_PhoneToApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF7EA59E822DA26E678A3AAE /* Pods_PhoneToApp.framework */; };
 		128364B424EFF18D00EF29E1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 128364B324EFF18D00EF29E1 /* AppDelegate.m */; };
 		128364B724EFF18D00EF29E1 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 128364B624EFF18D00EF29E1 /* SceneDelegate.m */; };
 		128364BA24EFF18D00EF29E1 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 128364B924EFF18D00EF29E1 /* ViewController.m */; };
@@ -29,6 +30,9 @@
 		128364C124EFF18E00EF29E1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		128364C324EFF18E00EF29E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		128364C424EFF18E00EF29E1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		91F3D2C99C2D52F451260CCE /* Pods-PhoneToApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhoneToApp.release.xcconfig"; path = "Target Support Files/Pods-PhoneToApp/Pods-PhoneToApp.release.xcconfig"; sourceTree = "<group>"; };
+		9FCDA64ADB162C80CDF77A84 /* Pods-PhoneToApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhoneToApp.debug.xcconfig"; path = "Target Support Files/Pods-PhoneToApp/Pods-PhoneToApp.debug.xcconfig"; sourceTree = "<group>"; };
+		FF7EA59E822DA26E678A3AAE /* Pods_PhoneToApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PhoneToApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +40,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0047BD10733F301CE52CDDB7 /* Pods_PhoneToApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -47,6 +52,8 @@
 			children = (
 				128364B124EFF18D00EF29E1 /* PhoneToApp */,
 				128364B024EFF18D00EF29E1 /* Products */,
+				AE6F13CBABDD6555256A27D0 /* Pods */,
+				4C65618FE2280980A163F5B9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -76,6 +83,23 @@
 			path = PhoneToApp;
 			sourceTree = "<group>";
 		};
+		4C65618FE2280980A163F5B9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FF7EA59E822DA26E678A3AAE /* Pods_PhoneToApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AE6F13CBABDD6555256A27D0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9FCDA64ADB162C80CDF77A84 /* Pods-PhoneToApp.debug.xcconfig */,
+				91F3D2C99C2D52F451260CCE /* Pods-PhoneToApp.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -83,9 +107,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 128364C824EFF18E00EF29E1 /* Build configuration list for PBXNativeTarget "PhoneToApp" */;
 			buildPhases = (
+				98F56D301BACA3851FAA736C /* [CP] Check Pods Manifest.lock */,
 				128364AB24EFF18D00EF29E1 /* Sources */,
 				128364AC24EFF18D00EF29E1 /* Frameworks */,
 				128364AD24EFF18D00EF29E1 /* Resources */,
+				EB7B57DC003186F28085BD80 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -140,6 +166,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		98F56D301BACA3851FAA736C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PhoneToApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EB7B57DC003186F28085BD80 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PhoneToApp/Pods-PhoneToApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PhoneToApp/Pods-PhoneToApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PhoneToApp/Pods-PhoneToApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		128364AB24EFF18D00EF29E1 /* Sources */ = {
@@ -287,10 +355,12 @@
 		};
 		128364C924EFF18E00EF29E1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9FCDA64ADB162C80CDF77A84 /* Pods-PhoneToApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7F2B5ZSP8Q;
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = PhoneToApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -304,10 +374,12 @@
 		};
 		128364CA24EFF18E00EF29E1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 91F3D2C99C2D52F451260CCE /* Pods-PhoneToApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7F2B5ZSP8Q;
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = PhoneToApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
